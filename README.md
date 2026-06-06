@@ -30,5 +30,5 @@ cd local-ollama-powered-ai-assisted-doc-analyzer
 python3 -m venv venv
 source venv/bin/activate
 pip install langchain-community langchain-ollama
-python lapp.py
+python app.py
 

@@ -1,0 +1,54 @@
+================================================================================
+NEXUS AEROSPACE INDUSTRIES: DEEP SPACE INITIATIVE (DSI) MULTI-YEAR FRAMEWORK
+DOCUMENT ID: NAI-DSI-2026-X9
+CLASSIFICATION: LEVEL 4 RESTRICTED
+DATE: June 6, 2026
+================================================================================
+
+1. MISSION OVERVIEW & STRATEGIC MANDATE
+The Nexus Deep Space Initiative (DSI) governs the development and deployment of autonomous cargo transit matrices. The primary phase, codenamed "Aether-1," establishes a heavy-payload orbital staging platform. 
+
+The baseline deployment timeline requires structural finalization of the staging ring by October 24, 2026. Secondary telemetry arrays must go live no later than April 12, 2027. If the Aether-1 staging ring misses its October benchmark, all downstream launch windows for the 2027 calendar year are automatically scrubbed due to orbital alignment constraints.
+
+2. FINANCIAL ALLOCATIONS & FISCAL CONSTRAINTS
+The total authorized program funding for the FY 2026–2028 lifecycle is distributed across three distinct operational tranches:
+
+* Core Structural Engineering (Tranche A): 
+  - Allocation: $84.5 Million.
+  - Spent to Date: $62.1 Million.
+  - Status: Capital restricted. No further drawdowns permitted without Executive Board sign-off.
+
+* Autonomous Guidance Software & Compute Units (Tranche B):
+  - Allocation: $18.2 Million.
+  - Spent to Date: $4.3 Million.
+  - Note: $2.5 Million from this tranche is temporarily frozen pending edge-hardware validation protocols.
+
+* Contingency Mitigation Reserve (Tranche C):
+  - Allocation: $7.4 Million.
+  - Emergency Threshold: If Tranche A requires a safety breach injection, funds will be siphoned from Tranche C up to a maximum limit of $3.0 Million.
+
+3. TECHNICAL SPECIFICATIONS & EDGE COMPUTING CEILINGS
+The primary onboard Guidance and Autonomous Navigation Module (GANM) operates under tight physical resource limits on the transit vessels:
+
+- Maximum Available Onboard VRAM: 4.0 GB (Dedicated hardware ASIC).
+- Maximum Allowable Memory Footprint per Model: 2.8 GB (To leave 1.2 GB overhead for real-time telemetry processing).
+- Protocol Framework: Edge units must run locally without external cloud-relay dependency due to a 45-minute communication latency penalty.
+
+4. RISK ARCHITECTURE & OPERATIONAL BOTTLENECK ANALYSIS
+A critical audit of the DSI framework has flagged three active system-level vulnerabilities:
+
+* [CRITICAL RISK] Model Footprint Overhead:
+The software team has compiled the baseline navigation models using a 7-Billion parameter framework architecture. Internal bench testing shows this 7B architecture commands a baseline active memory footprint of 5.2 GB RAM/VRAM. This directly violates the GANM hardware ceiling specified in Section 3, generating immediate Out-Of-Memory (OOM) fatal faults during simulation sequences.
+
+* [HIGH RISK] Supply Chain Deficits (Helium-3 Isolation Valves):
+The specialized shielding valves sourced from Alpha-Centauri Components Ltd. are currently delayed. The vendor cites a 90-day manufacturing backlog. This backlog delays the integration testing window for the propulsion matrix from August 1, 2026, to November 1, 2026.
+
+* [MEDIUM RISK] Structural Dependency Conflict:
+Propulsion matrix testing cannot occur until the propulsion housing is physically attached to the Aether-1 staging ring. 
+
+5. RECOVERY PROTOCOLS & MANDATED REMEDIATION STEPS
+To maintain the critical October 24, 2026 deadline, the following emergency corrective adjustments are hereby ordered:
+
+- Action 01: The Software Architecture Group must immediately abandon the 7B model design. They are ordered to downscale to a highly optimized 3-Billion parameter framework (e.g., Qwen 2.5 3B or Llama 3.2 3B). These 3B architectures operate at a 2.1 GB local VRAM footprint, safely staying beneath the 2.8 GB model limit.
+- Action 02: Legal must issue a contract default notice to Alpha-Centauri Components Ltd. if shipping validation is not received by July 15, 2026, with an immediate backup order placed with Onyx Manufacturing Corp.
+================================================================================

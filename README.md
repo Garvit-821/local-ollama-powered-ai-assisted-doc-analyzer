@@ -2,7 +2,7 @@
 
 A privacy-first, 100% offline, local AI-powered document analysis agent and interactive chatbot designed to run seamlessly on resource-constrained hardware. Built using **Python**, **Ollama**, and **LangChain**, this project is optimized to leverage dedicated GPU capabilities without exhausting standard system memory.
 
-This agent is specifically engineered to execute perfectly on setups running **Ubuntu** with **8GB RAM** and a **4GB VRAM GPU (e.g., NVIDIA RTX 3050)** by utilizing high-performance, low-footprint 3B parameter models.
+This agent is specifically engineered to execute perfectly on setups running on mid-end systems by utilizing high-performance, low-footprint 3B parameter models.
 
 ---
 

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexus Deep Document Analytics - Privacy-First Hardware Accelerated Local Intel Agent.">
+    <title>Nexus Analytics Workspace ⚡</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Application Logic -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- TOP DECK: SYSTEM HEADS-UP DISPLAY -->
+        <header class="top-header">
+            <div class="brand-section">
+                <div class="logo-pulse">
+                    <i class="fa-solid fa-compass-drafting logo-icon"></i>
+                    <span class="pulse-ring"></span>
+                </div>
+                <div class="title-meta">
+                    <h1>NEXUS DEEP DOCUMENT ANALYTICS</h1>
+                    <p class="subtitle">PRIVACY-FIRST HARDWARE ACCELERATED LOCAL INTEL AGENT</p>
+                </div>
+            </div>
+            <div class="engine-badge" id="engineBadge">
+                <span class="status-dot online"></span>
+                <span class="badge-text">ENGINE: OLLAMA (QWEN2.5:3B)</span>
+            </div>
+        </header>
+
+        <!-- DASHBOARD HUB: KEY TELEMETRY METRICS -->
+        <section class="telemetry-bar" id="telemetryBar">
+            <div class="metric-card" id="metricInference">
+                <div class="metric-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Inference State</span>
+                    <span class="metric-value">READY</span>
+                    <span class="metric-delta delta-pos">CUDA Active</span>
+                </div>
+            </div>
+            <div class="metric-card" id="metricLines">
+                <div class="metric-icon"><i class="fa-solid fa-align-left"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Parsed Lines</span>
+                    <span class="metric-value" id="valLines">0 Lines</span>
+                    <span class="metric-delta">Structural Matrix</span>
+                </div>
+            </div>
+            <div class="metric-card" id="metricTokens">
+                <div class="metric-icon"><i class="fa-solid fa-list-check"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Word Count</span>
+                    <span class="metric-value" id="valWords">0 Words</span>
+                    <span class="metric-delta">Token Matrix Size</span>
+                </div>
+            </div>
+            <div class="metric-card" id="metricMemory">
+                <div class="metric-icon"><i class="fa-solid fa-server"></i></div>
+                <div class="metric-info">
+                    <span class="metric-label">Memory Footprint</span>
+                    <span class="metric-value" id="valMem">0.0 MB</span>
+                    <span class="metric-delta delta-neg" id="valMemDelta">-0.0 MB Saved</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN DECK: DOUBLE PANEL SPLIT SCREEN -->
+        <main class="cockpit-grid">
+            
+            <!-- LEFT PANEL: FILE VIEWER & DATALINK STREAM -->
+            <section class="panel-card left-panel" id="leftPanel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-glasses"></i>
+                        <h2>LIVE DATALINK STREAM</h2>
+                    </div>
+                    <div class="panel-actions">
+                        <div class="search-container">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" id="docSearch" placeholder="Filter line matrix..." autocomplete="off">
+                        </div>
+                        <button class="btn-icon" id="btnScrollToTop" title="Scroll to Top">
+                            <i class="fa-solid fa-circle-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="panel-body document-viewer-wrapper">
+                    <!-- Loaded File Name Display -->
+                    <div class="doc-active-banner" id="docActiveBanner">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span id="activeDocName">NO ACTIVE DOCUMENT LOADED</span>
+                    </div>
+                    <!-- Document Line Code Block -->
+                    <div class="document-code-viewport" id="documentViewport">
+                        <div class="viewport-placeholder">
+                            <i class="fa-solid fa-arrow-up-from-bracket upload-pulse-icon"></i>
+                            <p>Upload a schema document to initialize visual datalink stream</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: NEURAL INTERACTIVE LOGIC EXECUTION -->
+            <section class="panel-card right-panel" id="rightPanel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-brain"></i>
+                        <h2>INTERACTIVE LOGIC EXECUTION</h2>
+                    </div>
+                    <div class="panel-actions">
+                        <button class="btn-secondary btn-sm" id="btnPurgeMemory">
+                            <i class="fa-solid fa-soap"></i> PURGE CORE MEMORY
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="panel-body chat-interface-wrapper">
+                    <!-- Chat Message Area -->
+                    <div class="chat-log" id="chatLog">
+                        <div class="chat-placeholder">
+                            <i class="fa-solid fa-satellite-dish chat-placeholder-icon"></i>
+                            <h3>Intelligence Agent Idle</h3>
+                            <p>Await document ingestion before submitting neural queries.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Input Controls -->
+                    <div class="chat-input-deck">
+                        <form id="chatForm">
+                            <div class="chat-input-wrapper">
+                                <textarea id="chatInput" placeholder="Query the analytics matrix..." rows="1" required disabled></textarea>
+                                <button type="submit" id="btnSubmitChat" class="btn-primary" disabled>
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- INITIALIZATION INGESTION OVERLAY SCREEN -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>📁 INGESTION ENGINE</h2>
+                <p>Deploy local document blueprints into GPU-bound neural context</p>
+            </div>
+            
+            <!-- Drag & Drop Dropzone -->
+            <div class="dropzone-container" id="dropzone">
+                <input type="file" id="fileInput" accept=".txt" style="display: none;">
+                <div class="dropzone-content">
+                    <div class="cloud-icon-wrapper">
+                        <i class="fa-solid fa-cloud-arrow-up cloud-icon"></i>
+                    </div>
+                    <h3>Drag & Drop Ingestion Blueprint</h3>
+                    <p>Supported file type: <span>.txt</span> (Plain Text)</p>
+                    <button class="btn-primary" id="btnSelectFile">Browse Local System</button>
+                </div>
+            </div>
+
+            <!-- Ingestion progress overlay -->
+            <div class="upload-progress-container" id="uploadProgressContainer" style="display: none;">
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="uploadProgressBar"></div>
+                </div>
+                <p class="progress-status" id="uploadProgressStatus">Processing document structure...</p>
+            </div>
+            
+            <!-- Specs detect cards -->
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <span class="spec-label">Compute Core Target</span>
+                    <span class="spec-val">RTX 3050 (4GB)</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-label">RAM Threshold</span>
+                    <span class="spec-val">8GB Safe Mode</span>
+                </div>
+                <div class="spec-card">
+                    <span class="spec-label">Inference Target</span>
+                    <span class="spec-val">~25 ms/tok</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating System Messages / Toast Alerts -->
+    <div class="toast-container" id="toastContainer"></div>
+</body>
+</html>
